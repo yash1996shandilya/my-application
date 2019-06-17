@@ -34,18 +34,14 @@ public class DAPForm extends AppCompatActivity {
     public static final String EXTRA_CUSTOMER_NAME="messenger.hfad.com.karvyfinal.EXTRA_CUSTOMER_NAME";
     public static final String EXTRA_CUSTOMER_CATEGORY="messenger.hfad.com.karvyfinal.EXTRA_CUSTOMER_CATEGORY";
     public static final String EXTRA_CONTACT_NUMBER="messenger.hfad.com.karvyfinal.EXTRA_CONTACT_NUMBER";
-
     private final String TAG="DAPForm";
-    private List<CustomerCategory> categoryList;
-    private List<ServiceEnagegement> ServiceEngagement;
-    private List<MeetingsAgenda> meetingsAgenda;
-
+    private List<CustomerCategory> categoryList=new ArrayList<>();
+    private List<ServiceEnagegement> ServiceEngagement=new ArrayList<>();
+    private List<MeetingsAgenda> meetingsAgenda=new ArrayList<>();
     private EditText editText1,editText2,editText3,editText4, editText5, editText6, editText7,editText8,editText9,editText10;
     private Spinner spinner,spinner2,spinner3;
     private Button submit;
     private String item1,item2,item3;
-
-
 
 
     @Override
@@ -86,9 +82,11 @@ public class DAPForm extends AppCompatActivity {
         call.enqueue(new Callback<itemPOJO>() {
             @Override
             public void onResponse(Call<itemPOJO> call, Response<itemPOJO> response) {
+                System.out.println("response is--->"+response.body());
                  categoryList = response.body().getCustomerCategories();
                  ServiceEngagement = response.body().getServiceEnagegements();
                  meetingsAgenda=response.body().getMeetingsAgenda();
+                 setSpinnerData();
             }
 
             @Override
@@ -98,71 +96,74 @@ public class DAPForm extends AppCompatActivity {
 
             }
         });
-//
-
-        //Spinners
         //1.Customer Category
         spinner = findViewById(R.id.spinner_1);
-        ArrayAdapter<CustomerCategory> adapter=new ArrayAdapter<CustomerCategory>(DAPForm.this,R.layout.spinner_layout,R.id.txt,categoryList);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                 item1=parent.getItemAtPosition(position).toString();
-                 Toast.makeText(parent.getContext(),"Selected :"+item1,Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-
         //2.Service Engagement
         spinner2 = findViewById(R.id.spinner_2);
-        ArrayAdapter<ServiceEnagegement> adapter1=new ArrayAdapter<ServiceEnagegement>(DAPForm.this,R.layout.spinner_layout,R.id.txt,ServiceEngagement);
-        spinner2.setAdapter(adapter1);
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                item2=parent.getItemAtPosition(position).toString();
-
-                Toast.makeText(parent.getContext(),"Selected :"+item2,Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
         //3.MeetingsAgenda
         spinner3 = findViewById(R.id.spinner_3);
-        ArrayAdapter<MeetingsAgenda> adapter2=new ArrayAdapter<MeetingsAgenda>(DAPForm.this,R.layout.spinner_layout,R.id.txt,meetingsAgenda);
-        spinner3.setAdapter(adapter2);
-        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                item3=parent.getItemAtPosition(position).toString();
-                Toast.makeText(parent.getContext(),"Selected :"+item3,Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-//sir when i add spinner to my activity. then the whole activity goes blank.it disappears.
+    }
 
 
+    /**
+     * setSpinnerData
+     */
+    private void setSpinnerData(){
 
-        //getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_fab_new);
-        //setTitle("Add Customer");
+        try{
 
+            ArrayAdapter<CustomerCategory> adapter=new ArrayAdapter<CustomerCategory>(DAPForm.this,R.layout.spinner_layout,R.id.txt,categoryList);
+            spinner.setAdapter(adapter);
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    item1=parent.getItemAtPosition(position).toString();
+                    Toast.makeText(parent.getContext(),"Selected :"+item1,Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+
+            ArrayAdapter<ServiceEnagegement> adapter1=new ArrayAdapter<ServiceEnagegement>(DAPForm.this,R.layout.spinner_layout,R.id.txt,ServiceEngagement);
+            spinner2.setAdapter(adapter1);
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    item2=parent.getItemAtPosition(position).toString();
+
+                    Toast.makeText(parent.getContext(),"Selected :"+item2,Toast.LENGTH_SHORT).show();
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+            ArrayAdapter<MeetingsAgenda> adapter2=new ArrayAdapter<MeetingsAgenda>(DAPForm.this,R.layout.spinner_layout,R.id.txt,meetingsAgenda);
+            spinner3.setAdapter(adapter2);
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    item3=parent.getItemAtPosition(position).toString();
+                    Toast.makeText(parent.getContext(),"Selected :"+item3,Toast.LENGTH_SHORT).show();
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+        }catch (Throwable throwable){
+            throwable.printStackTrace();
+        }
     }
 
     private void saveNote(){

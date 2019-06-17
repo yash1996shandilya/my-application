@@ -30,11 +30,8 @@ import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private static final String TAG = "MainActivity";
-     public static final String BASE_URL = "http://ims.karvyinnotech.com/NBA/api/auth";
-
-
+    public static final String BASE_URL = "http://ims.karvyinnotech.com/NBA/api/auth";
 
     private EditText editTextEmpId, editTextPassword;
     private TextView signUp;

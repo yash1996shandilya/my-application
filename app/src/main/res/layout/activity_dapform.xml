@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@drawable/spiner_backgnd"/>
+       />
 
     <EditText
         
@@ -112,7 +112,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@drawable/spiner_backgnd"
         android:layout_marginBottom="5dp"/>
     <TextView
         android:layout_width="match_parent"
@@ -120,11 +119,10 @@
         android:text="@string/text3"/>
     <Spinner
         android:id="@+id/spinner_3"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/spiner_backgnd"/>
+        android:padding="10dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -135,8 +133,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button"
-        android:id="@+id/Submit"
-        />
+        android:id="@+id/Submit" />
+
     </LinearLayout>
 
 

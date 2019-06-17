@@ -18,7 +18,5 @@ public class RegistrationActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Set Password");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
     }
 }
