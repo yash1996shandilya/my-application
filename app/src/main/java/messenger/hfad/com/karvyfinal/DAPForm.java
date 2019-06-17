@@ -58,7 +58,6 @@ public class DAPForm extends AppCompatActivity {
         editText8=findViewById(R.id.edit_text_8);
         editText9=findViewById(R.id.edit_text_9);
         editText10=findViewById(R.id.edit_text_10);
-
         submit=findViewById(R.id.Submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +65,13 @@ public class DAPForm extends AppCompatActivity {
                 saveNote();
             }
         });
+
+        //1.Customer Category
+        spinner = findViewById(R.id.spinner_1);
+        //2.Service Engagement
+        spinner2 = findViewById(R.id.spinner_2);
+        //3.MeetingsAgenda
+        spinner3 = findViewById(R.id.spinner_3);
         //Retrofit Fetching for Spinner
         //i am fetching the json from postman and showing it with spinner
         //I am asking when you run your application issues with exception right?
@@ -82,10 +88,10 @@ public class DAPForm extends AppCompatActivity {
         call.enqueue(new Callback<itemPOJO>() {
             @Override
             public void onResponse(Call<itemPOJO> call, Response<itemPOJO> response) {
-                System.out.println("response is--->"+response.body());
+                 System.out.println("response is--->"+response.body());
                  categoryList = response.body().getCustomerCategories();
                  ServiceEngagement = response.body().getServiceEnagegements();
-                 meetingsAgenda=response.body().getMeetingsAgenda();
+                 meetingsAgenda = response.body().getMeetingsAgenda();
                  setSpinnerData();
             }
 
@@ -93,15 +99,8 @@ public class DAPForm extends AppCompatActivity {
             public void onFailure(Call<itemPOJO> call, Throwable t) {
                 Log.e(TAG,"onFailure: Something went wrong:"+t.getMessage());
                 Toast.makeText(DAPForm.this,"Something went wrong", Toast.LENGTH_SHORT).show();
-
             }
         });
-        //1.Customer Category
-        spinner = findViewById(R.id.spinner_1);
-        //2.Service Engagement
-        spinner2 = findViewById(R.id.spinner_2);
-        //3.MeetingsAgenda
-        spinner3 = findViewById(R.id.spinner_3);
     }
 
 
