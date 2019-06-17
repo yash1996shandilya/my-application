@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">KarvyFinal</string>
+    <string name="title_activity_customers_list">CustomersList</string>
+    <string name="internet">No Internet Connection. Please make sure your device is connected to the Internet.</string>
+    <string name="edittext1">Customer Name</string>
+    <string name="edittext2">Customer Contact Person Name</string>
+    <string name="edittext3">Customer Contact No.</string>
+    <string name="edittext4">Customer Email id</string>
+    <string name="edittext5">KIT employee accompanied</string>
+    <string name="edittext6">Discussion Brief With Customer</string>
+    <string name="edittext7">Agreed Next Steps</string>
+    <string name="edittext8">Follow up date</string>
+    <string name="edittext9">Outcome</string>
+    <string name="edittext10">Pursued ACV(in Lakhs)</string>
+    <string name="text1">Customer Visit Category</string>
+    <string name="text2">Service Engagement Type</string>
+    <string name="text3">Meeting Agenda Result</string>
+    <string name="text4">Signature</string>
+    <string name="button">Submit</string>
+</resources>

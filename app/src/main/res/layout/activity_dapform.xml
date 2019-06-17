@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".DAPForm">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/karvylogo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text1"/>
+
+    <Spinner
+        android:id="@+id/spinner_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/spiner_backgnd"/>
+
+    <EditText
+        
+
+        android:id="@+id/edit_text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext1"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext2"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext3"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext4"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext5"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext6"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext7"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext8"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext9"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edit_text_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edittext10"
+        android:inputType="text"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text2"/>
+    <Spinner
+        android:id="@+id/spinner_2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/spiner_backgnd"
+        android:layout_marginBottom="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text3"/>
+    <Spinner
+        android:id="@+id/spinner_3"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/spiner_backgnd"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/text4"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button"
+        android:id="@+id/Submit"
+        />
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="60dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/customername"
+                android:text="Customer Name:rakesh"
+                android:textColor="@color/custommade"
+                android:textAppearance="?android:textAppearanceSmall"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/customercategory"
+                android:text="Customer Category:no sub cat"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:layout_below="@id/customername"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contactnumber"
+                android:text="Contact Number: 9866646446"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:layout_below="@id/customercategory"/>
+
+        </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

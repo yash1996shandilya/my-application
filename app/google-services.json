@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "331938929899",
+    "firebase_url": "https://karvylogin2.firebaseio.com",
+    "project_id": "karvylogin2",
+    "storage_bucket": "karvylogin2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331938929899:android:a52b7a09399be530",
+        "android_client_info": {
+          "package_name": "messenger.hfad.com.karvyfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331938929899-dpivu473oo9cvnlb95r5mrkqfv9tnm2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDSCyywuSFlhjexjEW5nG5g2mj5zM_WMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331938929899-dpivu473oo9cvnlb95r5mrkqfv9tnm2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
