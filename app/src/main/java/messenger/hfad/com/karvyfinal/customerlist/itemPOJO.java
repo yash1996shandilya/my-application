@@ -7,10 +7,10 @@ import com.google.gson.annotations.SerializedName;
 public class itemPOJO {
     @SerializedName("status")
     @Expose
-    private String status;
+    private Boolean status;
     @SerializedName("customers")
     @Expose
-    private List<Object> customers = null;
+    private List<Customer> customers = null;
     @SerializedName("customer_categories")
     @Expose
     private List<CustomerCategory> customerCategories = null;
@@ -21,19 +21,19 @@ public class itemPOJO {
     @Expose
     private List<MeetingsAgenda> meetingsAgenda = null;
 
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 
-    public List<Object> getCustomers() {
+    public List<Customer> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(List<Object> customers) {
+    public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
 
@@ -64,7 +64,7 @@ public class itemPOJO {
     @Override
     public String toString() {
         return "itemPOJO{" +
-                "status='" + status + '\'' +
+                "status=" + status +
                 ", customers=" + customers +
                 ", customerCategories=" + customerCategories +
                 ", serviceEnagegements=" + serviceEnagegements +

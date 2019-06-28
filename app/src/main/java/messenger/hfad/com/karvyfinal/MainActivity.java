@@ -1,16 +1,13 @@
 package messenger.hfad.com.karvyfinal;
 
-import android.content.DialogInterface;
-
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 //import android.widget.Switch;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,16 +16,23 @@ import android.widget.Toast;
 
 import messenger.hfad.com.karvyfinal.auth.authPOJO;
 
+import messenger.hfad.com.karvyfinal.databaselogin.Users;
+import messenger.hfad.com.karvyfinal.databaselogin.UsersDao;
+import messenger.hfad.com.karvyfinal.databaselogin.UsersViewModel;
+import messenger.hfad.com.karvyfinal.getUser.User;
+import messenger.hfad.com.karvyfinal.getUser.UserList;
 import messenger.hfad.com.karvyfinal.model.RetrofitClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 import android.content.Intent;
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+
 
 
     private static final String TAG = "MainActivity";
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 userLogin();
+
+
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +121,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
 }
 

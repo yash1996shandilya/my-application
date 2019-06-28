@@ -1,7 +1,9 @@
 package messenger.hfad.com.karvyfinal.Database;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +14,28 @@ import java.util.List;
 
 import messenger.hfad.com.karvyfinal.R;
 
-public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
-    private List<Note> notes = new ArrayList<>();
+public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {
+    //private List<Note> notes = new ArrayList<>();
+
+    public NoteAdapter() {
+        super(DIFF_CALLBACK);
+    }
+
+    private static final DiffUtil.ItemCallback<Note> DIFF_CALLBACK = new DiffUtil.ItemCallback<Note>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
+            return oldItem.getId() == newItem.getId();
+
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
+
+            return oldItem.getCustomer_name().equals(newItem.getCustomer_name()) &&
+                    oldItem.getCustomer_category().equals(newItem.getCustomer_category()) &&
+                    oldItem.getContact_number().equals(newItem.getContact_number());
+        }
+    };
 
     @NonNull
     @Override
@@ -25,7 +47,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull NoteHolder viewHolder, int i) {
-        Note currentNote = notes.get(i);
+        Note currentNote = getItem(i);
         viewHolder.customername.setText(currentNote.getCustomer_name());
         viewHolder.customercategory.setText(currentNote.getCustomer_category());
         viewHolder.contactnumber.setText(currentNote.getContact_number());
@@ -33,16 +55,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     }
 
 
-    @Override
-    public int getItemCount() {
-        return notes.size();
-    }
-    public void setNotes(List<Note> notes){
-        this.notes=notes;
-        notifyDataSetChanged();
+
+
+    public Note getNodeAt(int position){
+        return getItem(position);
     }
 
-     class NoteHolder extends RecyclerView.ViewHolder{
+    class NoteHolder extends RecyclerView.ViewHolder{
         private TextView customername;
         private TextView customercategory;
         private TextView contactnumber;
@@ -57,3 +76,4 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
         }
     }
 }
+

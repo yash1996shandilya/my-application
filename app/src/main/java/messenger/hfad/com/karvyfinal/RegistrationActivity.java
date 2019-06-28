@@ -1,11 +1,8 @@
 package messenger.hfad.com.karvyfinal;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import androidx.appcompat.widget.Toolbar;
 
 public class RegistrationActivity extends AppCompatActivity {
     private Toolbar toolbar;

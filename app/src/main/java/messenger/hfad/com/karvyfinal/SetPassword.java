@@ -1,14 +1,13 @@
 package messenger.hfad.com.karvyfinal;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import messenger.hfad.com.karvyfinal.auth.authPOJO;
 import messenger.hfad.com.karvyfinal.auth.sendotpPOJO;
 import messenger.hfad.com.karvyfinal.model.RetrofitClient;
 import retrofit2.Call;

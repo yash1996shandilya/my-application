@@ -1,16 +1,19 @@
 package messenger.hfad.com.karvyfinal;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,11 +26,6 @@ import messenger.hfad.com.karvyfinal.Database.Note;
 import messenger.hfad.com.karvyfinal.Database.NoteAdapter;
 import messenger.hfad.com.karvyfinal.Database.NoteViewModel;
 import messenger.hfad.com.karvyfinal.customerlist.CustomerCategory;
-import messenger.hfad.com.karvyfinal.customerlist.itemPOJO;
-import messenger.hfad.com.karvyfinal.model.RetrofitClient;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class CustomerListFinal extends AppCompatActivity {
     public static final int ADD_NOTE_REQUEST = 1;
@@ -75,9 +73,25 @@ public class CustomerListFinal extends AppCompatActivity {
         noteViewModel.getAllNotes().observe(this, new Observer<List<Note>>() {
             @Override
             public void onChanged(@Nullable List<Note> notes) {
-                adapter.setNotes(notes);
+                adapter.submitList(notes);
             }
         });
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+                // viewHolder.getAdapterPosition()
+                //Swiping operation here
+                noteViewModel.delete(adapter.getNodeAt(viewHolder.getAdapterPosition()));
+                Toast.makeText(CustomerListFinal.this,"Customer Deleted",Toast.LENGTH_SHORT).show();
+
+            }
+        }).attachToRecyclerView(recyclerView);
 
 
 

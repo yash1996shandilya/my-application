@@ -1,12 +1,12 @@
 package messenger.hfad.com.karvyfinal.Database;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 @Database(entities = {Note.class},version = 1,exportSchema = false)
 public abstract class NoteDatabase extends RoomDatabase {
@@ -41,6 +41,8 @@ public abstract class NoteDatabase extends RoomDatabase {
         protected Void doInBackground(Void... voids) {
             noteDao.insert(new Note("ADA","750 accounts","1234545848"));
             noteDao.insert(new Note("des","Collection call","9526876667"));
+            noteDao.insert(new Note("yash","internship","9431000222"));
+            noteDao.insert(new Note("kesu","casual","9868123222"));
 
             return null;
         }

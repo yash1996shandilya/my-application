@@ -4,9 +4,20 @@ import com.google.gson.annotations.SerializedName;
 
 public class MeetingsAgenda {
 
+    @SerializedName("id")
+    @Expose
+    private Integer id;
     @SerializedName("name")
     @Expose
     private String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -19,7 +30,8 @@ public class MeetingsAgenda {
     @Override
     public String toString() {
         return "MeetingsAgenda{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
