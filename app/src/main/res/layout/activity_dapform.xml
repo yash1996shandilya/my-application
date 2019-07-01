@@ -7,143 +7,237 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".DAPForm">
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         >
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
 
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/karvylogo"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text1"/>
-
-    <Spinner
-        android:id="@+id/spinner_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/spiner_backgnd"/>
-
-    <EditText
-        
-
-        android:id="@+id/edit_text_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext1"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/edit_text_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext2"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/edit_text_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext3"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/edit_text_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext4"
-        android:inputType="text"/>
-
-
-        <Spinner
-            android:id="@+id/spinner_4"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:background="@drawable/spiner_backgnd"
-            android:layout_marginBottom="5dp"
-            ></Spinner>
+            android:orientation="vertical"
+            android:paddingTop="56dp"
+            >
 
-    <EditText
-        android:id="@+id/edit_text_6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext6"
-        android:inputType="text"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/karvylogo"/>
 
-    <EditText
-        android:id="@+id/edit_text_7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext7"
-        android:inputType="text"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Visit Category"/>
+            <Spinner
+                android:id="@+id/customIconSpinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/border_style"
 
-    <EditText
-        android:id="@+id/edit_text_8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext8"
-        android:inputType="text"/>
+                />
 
-    <EditText
-        android:id="@+id/edit_text_9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext9"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/edit_text_10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edittext10"
-        android:inputType="text"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text2"/>
-    <Spinner
-        android:id="@+id/spinner_2"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/spiner_backgnd"
-        android:layout_marginBottom="5dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text3"/>
-    <Spinner
-        android:id="@+id/spinner_3"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/spiner_backgnd"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:text="@string/text4"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button"
-        android:id="@+id/Submit"
-        />
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
 
 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_1"
 
+                    android:hint="Customer Name"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_2"
+
+                    android:hint="Customer Contact Person Name"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_3"
+                    android:inputType="number"
+
+                    android:hint="Customer Contact Number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_4"
+
+                    android:hint="Customer Email id"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <AutoCompleteTextView
+                android:id="@+id/autoTextDrop1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="1"
+                android:hint="KIT employee accompanied"/>
+            <Spinner
+                android:id="@+id/customIconSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/border_style"
+
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_5"
+
+                    android:hint="Discussion Brief With Customer"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_6"
+
+                    android:hint="Agreed Next Steps"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_7"
+
+                    android:hint="Follow up date"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_8"
+
+                    android:hint="Outcome"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <EditText
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_9"
+
+                    android:hint="Pursued ACV(in Lakhs)"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service Engagement Type"/>
+            <Spinner
+                android:id="@+id/customIconSpinner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/border_style"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meeting Agenda Result"/>
+            <Spinner
+                android:id="@+id/customIconSpinner3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/border_style"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit type"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First visit"
+                    android:textStyle="bold"/>
+                <RadioButton
+                    android:id="@+id/option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Follow up"
+                    android:textStyle="bold"/>
+            </RadioGroup>
+            <Button
+                android:id="@+id/signaturePad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_search_black_24dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Submit"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:text="Submit"
+                android:background="@color/custommade"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+    </RelativeLayout>
 
 
 </ScrollView>

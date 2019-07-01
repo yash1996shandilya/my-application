@@ -16,9 +16,11 @@ import messenger.hfad.com.karvyfinal.R;
 
 public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {
     //private List<Note> notes = new ArrayList<>();
+    private OnNoteListener onNoteListener;
 
-    public NoteAdapter() {
+    public NoteAdapter(OnNoteListener onNoteListener) {
         super(DIFF_CALLBACK);
+        this.onNoteListener=onNoteListener;
     }
 
     private static final DiffUtil.ItemCallback<Note> DIFF_CALLBACK = new DiffUtil.ItemCallback<Note>() {
@@ -42,7 +44,7 @@ public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.recycler_item,viewGroup,false);
-        return new NoteHolder(itemView);
+        return new NoteHolder(itemView,onNoteListener);
     }
 
     @Override
@@ -61,19 +63,32 @@ public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {
         return getItem(position);
     }
 
-    class NoteHolder extends RecyclerView.ViewHolder{
+    class NoteHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView customername;
         private TextView customercategory;
         private TextView contactnumber;
+        OnNoteListener onNoteListener;
 
-        public NoteHolder(@NonNull View itemView) {
+        public NoteHolder(@NonNull View itemView,OnNoteListener onNoteListener) {
             super(itemView);
 
             customername = itemView.findViewById(R.id.customername);
             customercategory = itemView.findViewById(R.id.customercategory);
             contactnumber = itemView.findViewById(R.id.contactnumber);
+            this.onNoteListener=onNoteListener;
+            itemView.setOnClickListener(this);
 
         }
+
+        @Override
+        public void onClick(View v) {
+            onNoteListener.onNoteClick(getAdapterPosition());
+
+        }
+    }
+    public interface OnNoteListener{
+        void onNoteClick(int position);
+
     }
 }
 

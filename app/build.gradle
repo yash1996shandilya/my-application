@@ -34,13 +34,15 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     //Retrofit Gson
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
     //coordinatorlayout
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.github.gcacace:signature-pad:1.2.1'
 
     //recycler view
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     //card view
-def lifecycle_version = "1.1.1"
+    def lifecycle_version = "1.1.1"
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
@@ -49,7 +51,6 @@ def lifecycle_version = "1.1.1"
 
     implementation 'androidx.room:room-runtime:2.0.0'
     annotationProcessor 'androidx.room:room-compiler:2.0.0'
-
 
 
 }

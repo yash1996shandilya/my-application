@@ -13,10 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DAPForm"
-            android:parentActivityName=".CustomerListFinal"/>
-        <activity android:name=".CustomerListFinal"
-            android:launchMode="singleTop"/>
+        <activity android:name=".CustomerDetails"
+            android:parentActivityName=".CustomerListFinal"></activity>
+        <activity android:name=".SignatureActivity" />
+        <activity
+            android:name=".DAPForm"
+            android:parentActivityName=".CustomerListFinal" />
+        <activity
+            android:name=".CustomerListFinal"
+            android:launchMode="singleTop" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".SetPassword" />
         <activity

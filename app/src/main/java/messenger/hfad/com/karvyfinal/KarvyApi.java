@@ -44,7 +44,7 @@ String BASE_URL="http://ims.karvyinnotech.com/NBA/api/";
     //get customer list
     
     @GET("v1/customers?user_id=88113&version=1.6&source=android")
-    Call<itemPOJO> getItems();
+    Call<String> getItems();
 
     @GET("v1/users/index")
     Call<User> getUserList();

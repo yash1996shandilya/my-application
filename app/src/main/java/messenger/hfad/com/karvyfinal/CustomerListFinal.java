@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,7 +28,7 @@ import messenger.hfad.com.karvyfinal.Database.NoteAdapter;
 import messenger.hfad.com.karvyfinal.Database.NoteViewModel;
 import messenger.hfad.com.karvyfinal.customerlist.CustomerCategory;
 
-public class CustomerListFinal extends AppCompatActivity {
+public class CustomerListFinal extends AppCompatActivity implements NoteAdapter.OnNoteListener {
     public static final int ADD_NOTE_REQUEST = 1;
 
     private RecyclerView recyclerView;
@@ -35,6 +36,7 @@ public class CustomerListFinal extends AppCompatActivity {
 
     //MVVM ARCHITECTURE COMPONENT
     private NoteViewModel noteViewModel;
+    //private Note mNotes;
 
 
     @Override
@@ -66,7 +68,7 @@ public class CustomerListFinal extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-         final NoteAdapter adapter=new NoteAdapter();
+         final NoteAdapter adapter=new NoteAdapter(this);
         recyclerView.setAdapter(adapter);
         //referencing the view model(MVVM ARCHITECTURE)
         noteViewModel = ViewModelProviders.of(CustomerListFinal.this).get(NoteViewModel.class);
@@ -154,5 +156,16 @@ public class CustomerListFinal extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onNoteClick(int position) {
 
+
+        Intent intent = new Intent(this,CustomerDetails.class);
+        //intent.putExtra(Intent.EXTRA_TITLE,title);
+        //intent.putExtra("selected_note",)
+        //intent.putExtra("some_object",mNotes.get(position));
+        startActivity(intent);
+
+
+    }
 }
